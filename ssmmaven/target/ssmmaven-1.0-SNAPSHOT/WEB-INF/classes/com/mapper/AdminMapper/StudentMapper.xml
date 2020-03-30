@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.StudentDao">
+    <!--sno   sname    ssex    sphone  saddress  sbirthday    classname  speciality -->
+    <resultMap id="queryStudent" type="student">
+     <id column="sno" property="sno"/>
+      <result column="sname" property="sname"/>
+      <result column="ssex" property="ssex"/>
+      <result column="sphone" property="sphone"/>
+      <result column="saddress" property="saddress"/>
+      <result column="sbirthday" property="sbirthday"/>
+      <result column="classname" property="studentClass.classname"/>
+      <result column="speciality" property="studentClass.speciality"/>
+    </resultMap>
+    <select id="queryStudent" resultMap="queryStudent">
+SELECT s.`sno`,s.`sname`,s.`ssex`,s.`sphone`,s.`saddress`,s.`sbirthday`,c.`classname`,c.`speciality` FROM student s,class c WHERE s.`classno`=c.`classno`
+    </select>
+</mapper>
