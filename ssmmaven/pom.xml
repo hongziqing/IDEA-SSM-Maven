@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring>4.0.0.RELEASE</spring>
+        <spring>5.3.19</spring>
     </properties>
     <dependencies>
         <dependency>
